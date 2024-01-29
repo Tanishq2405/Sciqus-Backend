@@ -1,0 +1,15 @@
+<!-- student_list.html -->
+
+{% for student in students %}
+  <div>
+    <h3>{{ student.name }}</h3>
+    <p>Course: {{ student.course.course_name }}</p>
+    <!-- Add other student information as needed -->
+
+    <!-- Edit Button -->
+    <a href="{% url 'edit_student' student.pk %}">Edit</a>
+
+    <!-- Delete Button -->
+    <a href="{% url 'delete_student' student.pk %}">Delete</a>
+  </div>
+{% endfor %}
